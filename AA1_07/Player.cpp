@@ -1,9 +1,12 @@
 #include "Player.h"
 
-Player::Player(std::string id, std::vector<Card> hand) {
+Player::Player(std::string id) {
 	
 	this->id = id;
-	this->hand = hand;
+}
+
+void Player::SetId(std::string id) {
+	this->id = id;
 }
 
 void Player::InsertCard(Card c) {
