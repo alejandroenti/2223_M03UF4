@@ -6,6 +6,23 @@ Card::Card(Suit palo, int valor) {
 	this->valor = valor;
 }
 
+Suit Card::GetPalo() {
+	return palo;
+}
+
+int Card::GetValor() {
+	return valor;
+}
+
+std::string Card::PrintCard() {
+
+	std::string result = "";
+	result += suits[palo];
+	result += valor;
+
+	return result;
+}
+
 bool Card::operator == (const Card& otherCard) {
 
 	bool result = true;
