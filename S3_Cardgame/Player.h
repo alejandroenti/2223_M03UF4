@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 #include <vector>
 #include <stdlib.h>
@@ -10,15 +9,14 @@
 class Player {
 
 private:
-	std::string id;
 	std::vector<Card> hand;
 
 public:
-	Player() = default;
-	Player(std::string id);
-	void SetId(std::string id);
+	std::string id;
+
+	Player(std::string name);
 	void InsertCard(Card c);
 	Card GetCard();
-	Card GetCard(Suit s);
+	Card GetCard(Suit t);
 	void PrintHand();
 };
