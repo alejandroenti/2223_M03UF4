@@ -1,7 +1,11 @@
 #pragma once
 
+#include <string>
 #include <vector>
 #include <stack>
+#include <stdlib.h>
+#include <Algorithm>
+#include <random>
 
 #include "Player.h"
 #include "Card.h"

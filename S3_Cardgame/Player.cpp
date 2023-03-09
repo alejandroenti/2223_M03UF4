@@ -16,7 +16,7 @@ void Player::InsertCard(Card c)
 	for (it; it != hand.end(); it++) {
 		if (*it > c) {
 			hand.emplace(it, c);
-			break;
+			return;
 		}
 	}
 
@@ -37,9 +37,26 @@ Card Player::GetCard()
 
 Card Player::GetCard(Suit t)
 {
+	for (int i = hand.size() - 1; i >= 0; i--) {
+		if (hand[i].GetType() == t) {
+			Card temp = hand[i];
+			hand.erase(hand.begin() + i);
+			return temp;
+		}
+	}
+
 	return Card();
 }
 
 void Player::PrintHand()
 {
+	// Print card:
+	// -> Card.value << " of " << uitNames[(int)Card.type]
+
+	std::string suitNames[] = { "SPADES", "COINS", "CUPS", "CLUBS" };
+
+	std::cout << " ------ PLAYER HAND ------ " << std::endl;
+	for (int i = 0; i < hand.size(); i++) {
+		std::cout << " - " << hand[i].GetValue() << " of " << suitNames[(int)hand[i].GetType()] << std::endl;
+	}
 }
